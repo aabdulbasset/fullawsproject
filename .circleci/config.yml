@@ -19,5 +19,7 @@ jobs:
       - run : 
           name: deploy to eb
           command: eb deploy Omaewamoe-env
-
-      
+workflows:
+  deploy-example:
+    jobs:
+      - backend
