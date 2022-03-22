@@ -16,9 +16,10 @@ jobs:
       - run :
           name: build backend
           command: npm run backend:build
-      - run : 
-          name: deploy to eb
-          command: eb deploy Omaewamoe-env
+      - eb/deploy:
+          application-name: omaewamoe
+          environment-name: Omaewamoe-env
+          app-dir: ./udagram-api
 workflows:
   deploy-example:
     jobs:
