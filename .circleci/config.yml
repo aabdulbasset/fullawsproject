@@ -1,0 +1,23 @@
+version: 2.1
+orbs:
+  eb: circleci/aws-elastic-beanstalk@1.0.0
+  node: circleci/node@5.0.1
+jobs:
+  backend:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - eb/setup
+      - checkout
+      - run:
+          name: install backend
+          command: npm run backend:install
+      - run :
+          name: build backend
+          command: npm run backend:build
+      - run : 
+          name: deploy to eb
+          command: eb deploy Omaewamoe-env
+
+      
