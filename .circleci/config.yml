@@ -8,18 +8,17 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
-      - eb/setup
       - checkout
+      - eb/setup
       - run:
           name: install backend
           command: npm run backend:install
       - run :
           name: build backend
           command: npm run backend:build
-      - eb/deploy:
-          application-name: omaewamoe
-          environment-name: Omaewamoe-env
-          app-dir: ./udagram-api
+      - run:
+          name: deploy to eb
+          command: eb deploy Omaewamoe-env
 workflows:
   deploy-example:
     jobs:
