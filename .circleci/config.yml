@@ -12,7 +12,8 @@ jobs:
       - node/install
       - checkout
       - awscli/install
-      - awscli/setup
+      - awscli/setup:
+          profile-name: eb-cli
       - eb/setup
       - run:
           name: install backend
@@ -20,14 +21,6 @@ jobs:
       - run :
           name: build backend
           command: npm run backend:build
-      - run:
-          command: |
-            mkdir ~/.aws
-            touch ~/.aws/config
-            chmod 600 ~/.aws/config
-            echo "[profile eb-cli]" > ~/.aws/config
-            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
-            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
       - run:
           name: clear the bucket
           command: aws s3 rm s3://elasticbeanstalk-eu-west-3-436411433992 --recursive
