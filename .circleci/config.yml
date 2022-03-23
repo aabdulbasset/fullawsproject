@@ -3,6 +3,7 @@ orbs:
   eb: circleci/aws-elastic-beanstalk@1.0.0
   node: circleci/node@5.0.1
   aws: circleci/aws-s3@3.0
+  awscli: circleci/aws-cli@2.1.0
 jobs:
   backend:
     docker:
@@ -10,8 +11,8 @@ jobs:
     steps:
       - node/install
       - checkout
-      - aws/install
-      - aws/configure
+      - awscli/install
+      - awscli/setup
       - eb/setup
       - run:
           name: install backend
