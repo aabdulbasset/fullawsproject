@@ -10,7 +10,8 @@ jobs:
     steps:
       - node/install
       - checkout
-      - aws/setup
+      - aws/install
+      - aws/configure
       - eb/setup
       - run:
           name: install backend
