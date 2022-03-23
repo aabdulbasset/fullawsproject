@@ -26,7 +26,10 @@ jobs:
             echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
       - run:
           name: deploy to eb
-          command: cd udagram-api && eb use Omaewamoe-env --profile eb-cli && eb deploy --profile eb-cli
+          command: |
+            cd udagram-api 
+            eb use Omaewamoe-env --profile eb-cli
+            eb deploy --profile eb-cli
 workflows:
   deploy-example:
     jobs:
