@@ -17,8 +17,16 @@ jobs:
           name: build backend
           command: npm run backend:build
       - run:
+          command: |
+            mkdir ~/.aws
+            touch ~/.aws/config
+            chmod 600 ~/.aws/config
+            echo "[profile eb-cli]" > ~/.aws/config
+            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
+      - run:
           name: deploy to eb
-          command: cd udagram-api && eb init -p node.js && eb deploy
+          command: cd udagram-api && eb use Omaewamoe-env --profile eb-cli && eb deploy --profile eb-cli
 workflows:
   deploy-example:
     jobs:
