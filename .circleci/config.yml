@@ -18,7 +18,7 @@ jobs:
           command: npm run backend:build
       - run:
           name: deploy to eb
-          command: cd udagram-api && eb use Omaewamoe-env --profile circleci && eb deploy Omaewamoe-env --profile circleci
+          command: cd udagram-api && eb init -p node.js && eb deploy Omaewamoe-env
 workflows:
   deploy-example:
     jobs:
