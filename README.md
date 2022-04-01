@@ -8,11 +8,12 @@ http://omaewamoe1.s3-website.us-east-2.amazonaws.com/home
 ### Health screenshots
 - Elastic Beanstalk
 ![Eb Health](/screenshots/eb%20health.png)
-- S3 
+- S3  
 ![S3 bucket](/screenshots/s3%20health.png)
-- RDS
+- RDS  
 ![RDS](/screenshots/rds%20health.png)
-
+- CircleCI  
+![circleCI](/screenshots/circleci.png)
 ### Env Vars
 ```
 POSTGRES_HOST
