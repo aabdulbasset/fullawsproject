@@ -1,7 +1,7 @@
 # Udagram
 
 ### Working URL
-http://omaewamoe1.s3-website.us-east-2.amazonaws.com/home
+http://omaewamoe1.s3-website.us-east-2.amazonaws.com/
 
 ### Documentation
 <a href="/docs/">Docs</a>
