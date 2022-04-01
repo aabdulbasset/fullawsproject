@@ -22,9 +22,6 @@ jobs:
           name: build backend
           command: npm run backend:build
       - run:
-          name: clear the bucket
-          command: aws s3 rm s3://elasticbeanstalk-eu-west-3-436411433992 --recursive
-      - run:
           name: deploy to eb
           command: |
             cd udagram-api 
