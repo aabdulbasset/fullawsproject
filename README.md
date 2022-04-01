@@ -4,7 +4,7 @@
 http://omaewamoe1.s3-website.us-east-2.amazonaws.com/home
 
 ### Documentation
-<a href="/docs/infrastructure.md">Docs</a>
+<a href="/docs/">Docs</a>
 ### Health screenshots
 - Elastic Beanstalk
 ![Eb Health](/screenshots/eb%20health.png)
