@@ -26,6 +26,7 @@ jobs:
             cd udagram-api 
             eb use Omaewamoe-env --profile eb-cli
             eb deploy --profile eb-cli
+            eb setenv PORT = $PORT POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME URL=$URL AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_BUCKET=$AWS_BUCKET AWS_PROFILE=$AWS_PROFILE AWS_REGION=$AWS_REGION AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY JWT_SECRET=$JWT_SECRET
   frontend:
     docker:
       - image: "cimg/base:stable"
@@ -52,5 +53,11 @@ jobs:
 workflows:
   deploy-example:
     jobs:
-      - backend
+      - backend:
+          filters:
+            branches:
+              only: main
       - frontend
+          filters:
+            branches:
+              only: main

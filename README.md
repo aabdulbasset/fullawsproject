@@ -14,19 +14,7 @@ http://omaewamoe1.s3-website.us-east-2.amazonaws.com/
 ![RDS](/screenshots/rds%20health.png)
 - CircleCI  
 ![circleCI](/screenshots/circleci.png)
-### Env Vars
-```
-POSTGRES_HOST
-PORT
-POSTGRES_DB
-POSTGRES_PASSWORD
-POSTGRES_USERNAME
-AWS_REGION
-AWS_PROFILE
-AWS_BUCKET
-URL
-JWT_SECRET
-```
+
 ## Testing
 
 This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
