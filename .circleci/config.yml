@@ -57,7 +57,7 @@ workflows:
           filters:
             branches:
               only: main
-      - frontend
+      - frontend:
           filters:
             branches:
               only: main
